@@ -36,7 +36,7 @@ function calculate(req, res, next) {
     }
     break;
   default:
-    reply = 'Please, enter the correct operator';
+    reply = `You entered the invalid method: ${operatorURL}`;
   }
 
   res.end(reply);
@@ -101,7 +101,8 @@ app.listen(3000);
 // }
 //
 // function fallback(req, res, next) {
-//   res.end('Please, enter the correct operator');
+//   const operatorURL = url.parse(req.url, true).pathname;
+//   res.end(`You entered the invalid method: ${operatorURL}`);
 //   res.end();
 // }
 //
